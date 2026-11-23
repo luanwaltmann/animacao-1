@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogada de Futebol Animada</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>Jogada de Futebol Animada</h1>
+        <p class="subtitle">
+          Acompanhe uma jogada do meio-campo até o gol. Use os botões para controlar a animação e escolha a velocidade.
+        </p>
+      </header>
+
+      <div class="field" id="field">
+        <div class="center-line"></div>
+        <div class="center-circle"></div>
+        <div class="penalty-area penalty-left"></div>
+        <div class="penalty-area penalty-right"></div>
+        <div class="goal goal-left"></div>
+        <div class="goal goal-right"></div>
+        <div class="goal-flash" id="goal-flash" role="status">GOOOL!</div>
+      </div>
+
+      <section class="controls" aria-label="Controles da animação">
+        <button class="btn btn-primary" id="btn-start" type="button">Iniciar</button>
+        <button class="btn" id="btn-pause" type="button" disabled>Pausar</button>
+        <button class="btn" id="btn-reset" type="button">Reiniciar</button>
+      </section>
+
+      <section class="speed" aria-label="Velocidade da animação">
+        <span class="speed-label">Velocidade</span>
+        <button class="speed-btn" type="button" data-speed="0.5" aria-pressed="false">0,5x</button>
+        <button class="speed-btn" type="button" data-speed="1" aria-pressed="true">1x</button>
+        <button class="speed-btn" type="button" data-speed="2" aria-pressed="false">2x</button>
+      </section>
+
+      <section class="info">
+        <div class="info-card">
+          <p class="info-status">Status: <strong id="status">Aguardando início</strong></p>
+          <h2 id="step-title">Pronto para começar</h2>
+          <p id="step-text">Clique em Iniciar para ver a jogada do início ao gol.</p>
+          <p class="step-counter" id="step-counter"></p>
+        </div>
+        <div class="info-card">
+          <h2>Roteiro da jogada</h2>
+          <ol class="step-list" id="step-list"></ol>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
